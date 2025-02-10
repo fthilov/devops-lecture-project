@@ -1,3 +1,3 @@
 # devops-lecture-project-2025
 
-Project for the lecture "Einführung in DevOps, Continuous Delivery Tools und Mindset"
+Unser Webshop ist ein Tech-Shop auf dem die neuesten Technikprodukte angeboten werden.
