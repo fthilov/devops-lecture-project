@@ -8,7 +8,7 @@ import (
 
 var secretKey = []byte("secret-key")
 
-func createToken(username string) (string, error) {
+func CreateToken(username string) (string, error) {
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256,
 		jwt.MapClaims{
 			"username": username,
@@ -20,7 +20,7 @@ func createToken(username string) (string, error) {
 	}
 	return tokenString, nil
 }
-func verifyToken(tokenString string) bool {
+func VerifyToken(tokenString string) bool {
 	token, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
 		return secretKey, nil
 	})
