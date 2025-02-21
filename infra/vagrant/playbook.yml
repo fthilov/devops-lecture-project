@@ -1,3 +1,4 @@
+---
 - name: Provision Go Application
   hosts: default
   vars: 
@@ -5,39 +6,49 @@
   become: true # root user
 
   tasks:
-  - name: Update apt cache
-    apt: 
-      update-cache: yes
-    become: true
+    - name: Update apt cache
+      apt: 
+        update_cache: yes
+      become: true
 
-  - name: Install required packages
-    apt: 
-    name:
-      - git
-    become: true
+    - name: Install required packages
+      apt:
+        name:
+          - git
+        state: present
+      become: true
 
-  - name: Download go tar file
-      command: "wget https://go.dev/dl/go{{ go_version }}.linux-amd64.tar.gz"
+    - name: Download Go tar file
+      get_url:
+        url: "https://go.dev/dl/go{{ go_version }}.linux-amd64.tar.gz"
+        dest: "/tmp/go{{ go_version }}.linux-amd64.tar.gz"
 
-  - name: Delete previous installation
-    command: rm -rf /usr/local/go
-    become: true
+    - name: Delete previous installation
+      file:
+        path: /usr/local/go
+        state: absent
+      become: true
 
-  - name: Extract and move new go folder to /usr/local
-    command: "tar -C /usr/local -xzf go{{ go_version }}.linux-amd64.tar.gz"
-    become: true
+    - name: Extract and move new Go folder to /usr/local
+      ansible.builtin.unarchive:
+        src: "/tmp/go{{ go_version }}.linux-amd64.tar.gz"
+        dest: /usr/local
+        remote_src: yes
+      become: true
 
-  - name: Delete downloaded tar file
-    shell: "rm -rf go{{ go_version }}.linux-amd64.tar.gz"
+    - name: Delete downloaded tar file
+      file:
+        path: "/tmp/go{{ go_version }}.linux-amd64.tar.gz"
+        state: absent
 
-  - name: Set up Go environment
-    lineinfile:
-      path: ~/.profile
-      line: 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin'
-      create: true
-      state: present
+    - name: Set up Go environment
+      lineinfile:
+        path: /home/vagrant/.profile
+        line: 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin'
+        create: yes
+        state: present
 
-  - name: Build and run Go application
-        shell: . ~/.profile && cd var/www/html && nohup go run /var/www/html/cmd/main.go > /dev/null 2>&1 &
-        async: 0
-        poll: 0
+    - name: Build and run Go application
+      shell: . /home/vagrant/.profile && cd /var/www/html && nohup go run /var/www/html/cmd/main.go > /dev/null 2>&1 & 
+      async: 0
+      poll: 0
