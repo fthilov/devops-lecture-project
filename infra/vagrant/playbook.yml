@@ -1,0 +1,54 @@
+---
+- name: Provision Go Application
+  hosts: default
+  vars: 
+    go_version: 1.24.0
+  become: true # root user
+
+  tasks:
+    - name: Update apt cache
+      apt: 
+        update_cache: yes
+      become: true
+
+    - name: Install required packages
+      apt:
+        name:
+          - git
+        state: present
+      become: true
+
+    - name: Download Go tar file
+      get_url:
+        url: "https://go.dev/dl/go{{ go_version }}.linux-amd64.tar.gz"
+        dest: "/tmp/go{{ go_version }}.linux-amd64.tar.gz"
+
+    - name: Delete previous installation
+      file:
+        path: /usr/local/go
+        state: absent
+      become: true
+
+    - name: Extract and move new Go folder to /usr/local
+      ansible.builtin.unarchive:
+        src: "/tmp/go{{ go_version }}.linux-amd64.tar.gz"
+        dest: /usr/local
+        remote_src: yes
+      become: true
+
+    - name: Delete downloaded tar file
+      file:
+        path: "/tmp/go{{ go_version }}.linux-amd64.tar.gz"
+        state: absent
+
+    - name: Set up Go environment
+      lineinfile:
+        path: /home/vagrant/.profile
+        line: 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin'
+        create: yes
+        state: present
+
+    - name: Build and run Go application
+      shell: . /home/vagrant/.profile && cd /var/www/html && nohup go run /var/www/html/cmd/main.go > /dev/null 2>&1 & 
+      async: 0
+      poll: 0
