@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: webshop-backend-deployment
+    namespace: webshop-backend
+    labels:
+        app: webshop-backend
+spec:
+    replicas: 3
+    selector:
+        matchLabels:
+            app: webshop-backend
+    template:
+        metadata:
+            labels:
+                app: webshop-backend
+        spec:
+            containers:
+                - name: webshop-backend
+                  image: ftvdb/devops-lecture-project:latest
+                  ports:
+                      - containerPort: 8080

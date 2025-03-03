@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: webshop-backend
+    namespace: webshop-backend
+spec:
+    containers:
+        - name: devops-lecture-project
+          image: ftvdb/devops-lecture-project:latest
+          ports:
+              - containerPort: 8080
