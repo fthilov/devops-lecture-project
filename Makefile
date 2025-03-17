@@ -1,7 +1,7 @@
 GO_CMD = go
 
 
-all: build-all test start
+all: build-all test start-all
 
 build-all:
 	$(GO_CMD) build -o auth-main ./auth-service/cmd/main.go 
