@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/fthilov/devops-lecture-project/compare/v1.0.0...v1.0.1) (2025-03-18)
+
+
+### Bug Fixes
+
+* testing the functionlity of release-please ([#20](https://github.com/fthilov/devops-lecture-project/issues/20)) ([9ea201a](https://github.com/fthilov/devops-lecture-project/commit/9ea201a590d4eba9c316dc69179bd495393f58ea))
+
 ## 1.0.0 (2025-03-18)
 
 

@@ -1,5 +1,6 @@
 {
     "auth-service/cmd": "1.0.0",
     "product-service/cmd": "1.0.0",
-    "checkout-service/cmd": "1.0.0"
+    "checkout-service/cmd": "1.0.0",
+    ".": "1.0.1"
 }
