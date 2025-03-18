@@ -3,15 +3,15 @@
     "release-type": "simple",
     "include-v-in-tag": false,
     "packages" : {
-        "auth-service" : {
+        "auth-service/cmd" : {
             "package-name": "auth-service",
             "release-type": "go"
         },
-        "product-service" : {
+        "product-service/cmd" : {
             "package-name": "product-service",
             "release-type": "go"
         },
-        "checkout-service" : {
+        "checkout-service/cmd" : {
             "package-name": "checkout-service",
             "release-type": "go"
         }
