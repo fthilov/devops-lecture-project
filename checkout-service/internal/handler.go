@@ -2,7 +2,8 @@ package internal
 
 import (
 	"net/http"
-	"github.com/fthilov/devops-lecture-project/auth-service/pkg/auth"
+
+	"github.com/fthilov/devops-lecture-project/checkout-service/pkg/auth"
 )
 
 func CheckoutPlaceOrderHandler(w http.ResponseWriter, r *http.Request) {
