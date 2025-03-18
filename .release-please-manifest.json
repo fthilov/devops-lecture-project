@@ -1,0 +1,5 @@
+{
+    "auth-service": "0.0.1",
+    "product-service": "0.0.1",
+    "checkout-service": "0.0.1"
+}
