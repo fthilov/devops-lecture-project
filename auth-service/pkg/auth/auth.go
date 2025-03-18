@@ -1,5 +1,6 @@
 package auth
 
+// Test comment
 import (
 	"time"
 
