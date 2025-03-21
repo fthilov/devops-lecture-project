@@ -1,7 +1,5 @@
 package main
 
-// Test comment
-
 import (
 	"fmt"
 	"log"
