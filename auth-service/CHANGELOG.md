@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/fthilov/devops-lecture-project/compare/auth-service-1.1.0...auth-service-1.1.1) (2025-03-21)
+
+
+### Bug Fixes
+
+* **auth-service, product-service, checkout-service:** Test functionality of release please ([#32](https://github.com/fthilov/devops-lecture-project/issues/32)) ([0d2b8d3](https://github.com/fthilov/devops-lecture-project/commit/0d2b8d368c45de28a186ed26bdc8b9e09f7893ff))
+
 ## [1.1.0](https://github.com/fthilov/devops-lecture-project/compare/auth-service-1.0.0...auth-service-1.1.0) (2025-03-21)
 
 
