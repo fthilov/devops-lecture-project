@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.1.2](https://github.com/fthilov/devops-lecture-project/compare/auth-service-1.1.1...auth-service-1.1.2) (2025-03-21)
+
+
+### Bug Fixes
+
+* **auth-service, product-service, checkout-service:** Test functionality of release please ([#34](https://github.com/fthilov/devops-lecture-project/issues/34)) ([e0fd9d8](https://github.com/fthilov/devops-lecture-project/commit/e0fd9d826f6930b38b682e32ae0b7b79d8e98138))
+* **auth-service,:** Test functionality of release please ([#34](https://github.com/fthilov/devops-lecture-project/issues/34)) ([e0fd9d8](https://github.com/fthilov/devops-lecture-project/commit/e0fd9d826f6930b38b682e32ae0b7b79d8e98138))
+* **checkout-service:** Test functionality of release please ([#34](https://github.com/fthilov/devops-lecture-project/issues/34)) ([e0fd9d8](https://github.com/fthilov/devops-lecture-project/commit/e0fd9d826f6930b38b682e32ae0b7b79d8e98138))
+* **product-service:** Test functionality of release please ([#34](https://github.com/fthilov/devops-lecture-project/issues/34)) ([e0fd9d8](https://github.com/fthilov/devops-lecture-project/commit/e0fd9d826f6930b38b682e32ae0b7b79d8e98138))
+
 ## [1.1.1](https://github.com/fthilov/devops-lecture-project/compare/auth-service-1.1.0...auth-service-1.1.1) (2025-03-21)
 
 
