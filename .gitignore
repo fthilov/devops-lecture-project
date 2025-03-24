@@ -1,2 +1,8 @@
 # Vagrant
 infra/vagrant/.vagrant
+
+# openTofu
+infra/tofu/.terraform
+infra/tofu/.terraform.lock.hcl
+infra/tofu/terraform.tfstate
+terraform.tfstate.backup
