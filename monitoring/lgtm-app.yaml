@@ -15,13 +15,6 @@ spec:
         - repoURL: https://github.com/fthilov/devops-lecture-project
         targetRevision: dev
         ref: values
-    sources:
-        - repoURL: 
-          chart: grafana
-          targetRevision: 7.3.9
-          helm:
-              valueFiles:
-                  - values.yaml
     destination:
         server: https://kubernetes.default.svc
         namespace: monitoring
