@@ -12,7 +12,7 @@ spec:
           helm:
               valueFiles:
                   - $values/monitoring/values.yaml
-        - repoURL: https://github.com/fthilov/devops-lecture-project.git#argo-cd
+        - repoURL: https://github.com/fthilov/devops-lecture-project.git
           targetRevision: dev
           ref: values
     destination:
