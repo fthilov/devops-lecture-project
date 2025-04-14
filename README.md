@@ -53,3 +53,10 @@ To check if the ArgoCD application is running, run the following commands:
 4. Access localhost:8080 and login with **admin** as username and the provided password
 
 ## Aufgabe 7
+
+TODO: David
+
+## Aufgabe 8
+
+1. kubectl apply -f monitoring/lgtm-app.yaml
+2. Check on localhost:8080 to see if the lgtm stack is running
