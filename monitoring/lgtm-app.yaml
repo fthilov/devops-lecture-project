@@ -13,7 +13,7 @@ spec:
               valueFiles:
                   - $values/monitoring/values.yaml
         - repoURL: https://github.com/fthilov/devops-lecture-project.git
-          targetRevision: dev
+          targetRevision: HEAD
           ref: values
     destination:
         server: https://kubernetes.default.svc
