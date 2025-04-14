@@ -4,7 +4,8 @@ Unser Webshop für IT-Produkte bietet eine breite Auswahl an hochwertiger Hardwa
 
 ## Aufgabe 2
 
-TODO: David
+0. change directory: infra/vagrant
+1. builds and provisions the virtual development environment: `vagrant up`
 
 ## Aufgabe 3
 
@@ -53,8 +54,12 @@ To check if the ArgoCD application is running, run the following commands:
 4. Access localhost:8080 and login with **admin** as username and the provided password
 
 ## Aufgabe 7
-
-TODO: David
+0. change in directory: infra/tofu
+1. login azure: `az login`
+2. Initializes the working directory: `tofu init`
+3. shows planned infrastructure changes: `tofu plan`
+4. applies the planned changes to create/update infrastructure: `tofu apply`
+ 
 
 ## Aufgabe 8
 

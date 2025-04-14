@@ -44,11 +44,11 @@
     - name: Set up Go environment
       lineinfile:
         path: /home/vagrant/.profile
-        line: 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin'
+        line: 'export PATH=$PATH:/usr/local/go/bin'
         create: yes
         state: present
 
     - name: Build and run Go application
-      shell: . /home/vagrant/.profile && cd /var/www/html && nohup go run /var/www/html/cmd/main.go > /dev/null 2>&1 & 
+      shell: . /home/vagrant/.profile && cd /var/www/html && nohup go run ./cmd/main.go > /dev/null 2>&1 & 
       async: 0
       poll: 0
