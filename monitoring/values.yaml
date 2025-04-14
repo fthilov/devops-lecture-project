@@ -1,37 +1,37 @@
 grafana:
     dashboards:
-  default:
-    cpu-usage:
-      json: |
-        {
-          "id": null,
-          "uid": "cpu-usage",
-          "title": "CPU Usage",
-          "tags": ["system", "cpu"],
-          "timezone": "browser",
-          "schemaVersion": 30,
-          "version": 1,
-          "panels": [
-            {
-              "type": "timeseries",
-              "title": "CPU Usage per instance",
-              "datasource": "Prometheus",
-              "targets": [
-                {
-                  "expr": "100 - (avg by(instance)(rate(node_cpu_seconds_total{mode=\"idle\"}[5m])) * 100)",
-                  "legendFormat": "{{instance}}",
-                  "refId": "A"
-                }
-              ],
-              "fieldConfig": {
-                "defaults": {
-                  "unit": "percent"
-                },
-                "overrides": []
-              }
-            }
-          ]
-        }
+        default:
+            cpu-usage:
+                json: |
+                    {
+                      "id": null,
+                      "uid": "cpu-usage",
+                      "title": "CPU Usage",
+                      "tags": ["system", "cpu"],
+                      "timezone": "browser",
+                      "schemaVersion": 30,
+                      "version": 1,
+                      "panels": [
+                        {
+                          "type": "timeseries",
+                          "title": "CPU Usage per instance",
+                          "datasource": "Prometheus",
+                          "targets": [
+                            {
+                              "expr": "100 - (avg by(instance)(rate(node_cpu_seconds_total{mode=\"idle\"}[5m])) * 100)",
+                              "legendFormat": "{{instance}}",
+                              "refId": "A"
+                            }
+                          ],
+                          "fieldConfig": {
+                            "defaults": {
+                              "unit": "percent"
+                            },
+                            "overrides": []
+                          }
+                        }
+                      ]
+                    }
 
     additionalDataSources:
         - name: Prometheus
